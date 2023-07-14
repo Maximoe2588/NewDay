@@ -1,22 +1,21 @@
 import './App.css';
+import React, { useState } from "react";
 
 
+function App (){
 
-function Notifications({ inbox }) {
-  if (inbox.length > 0) {
-    return <p>You have {inbox.length} notifications today!</p>;
-  }
-  return null;
+const [signedUp, setSignedUp] = useState(false);
+
+return (
+  <div>
+    <button onClick={() => setSignedUp(!signedUp)}>
+
+      {signedUp ? "Signed up" : "Not Signed up"}
+    </button>
+  </div>
+)
+
 }
-
-
-
-function App() {
-  
-      const notifications = ["You received a package", "The weather is sunny","New Message"];
-      return <Notifications inbox ={notifications} />;
-    }
-
 
 export default App;
 
